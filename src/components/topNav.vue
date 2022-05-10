@@ -7,7 +7,7 @@
         <a @click="Next" class="clickEvent iconfont icon-xiangyoujiantou"> </a>
         <span class="search">
           <i class="icon-Magnifier iconfont"></i>
-          <input type="text" placeholder="张学友" />
+          <input type="text" placeholder="张学友" @keyup.enter='search()' id="search-box"/>
         </span>
       </span>
       <span id="TopNav-right" @click="loginPage()">
@@ -50,6 +50,10 @@ export default {
     loginPage() {
       document.querySelector("#loginPage").style.display = "block";
     },
+    search(){
+      let search_value = document.querySelector('#search-box').value
+      this.$router.push({path:`/search/${search_value}`})
+    }
   },
   components: {
   },

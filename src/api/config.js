@@ -10,6 +10,8 @@ export const recommendSongs = api + '/recommend/songs'
 export const personalized = api + '/personalized'    //获取推荐歌单，不需要登录
 export const detailPlaylist = api + '/playlist/detail' //获取歌单信息
 
+export const search = api +'/cloudsearch'
+
 export const leaderBoards = api + '/toplist'
 export const getDetailedAllSong = api + '/playlist/track/all'
 

@@ -45,7 +45,6 @@ export default {
             });
           } else {
             api.personalized().then((res) => {
-              console.log(res.data);
               this.SongList = res.data.result;
               this.closeWait()
             });

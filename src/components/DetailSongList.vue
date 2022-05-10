@@ -199,7 +199,7 @@ ul {
 }
 .singer-name {
   margin-right: 20px;
-  width: 150px;
+  width: 10%;
   display: inline-block;
   height: 50px;
   vertical-align: top;
@@ -213,7 +213,7 @@ ul {
   -ms-user-select: none; /*IE10*/
   -khtml-user-select: none; /*早期浏览器*/
   user-select: none;
-  width: 400px;
+  width: 35%;
   display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -221,7 +221,7 @@ ul {
 }
 .album-name {
   margin-right: 20px;
-  width: 150px;
+  width: 20%;
   display: inline-block;
   height: 50px;
   vertical-align: top;

@@ -9,7 +9,9 @@ import {
     leaderBoards,
     getDetailedAllSong,
     detailPlaylist,
-    userDetail
+    userDetail,
+    search
+
 } from './config'
 
 axios.defaults.timeout = 30000
@@ -73,6 +75,14 @@ export default {
     userDetail(uid){
         return axios.get(userDetail,{
             params:{uid}
+        })
+    },
+    search(value,type){
+        return axios.get(search,{
+            params:{
+                keywords:value,
+                type:type||1
+            }
         })
     }
 }
