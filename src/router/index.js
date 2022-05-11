@@ -5,7 +5,7 @@ import recommend from '@/pages/DiscoverMusic/index'
 import follow from '@/pages/Follow/index'
 import leaderBoard from '@/pages/DiscoverMusic/components/leaderBoard'
 import detailSongList from '@/components/DetailSongList'
-import search from '@/components/Search'
+import search from '@/pages/Search/index'
 
 var router = new VueRouter({
     mode: 'history',

@@ -9,7 +9,11 @@
         <li v-for="option of options" :key="option.componentName">
           <button
             @click="changeComponents(option.componentName)"
-            :class="option.first == true ? 'nowTab '+ option.componentName: option.componentName"
+            :class="
+              option.first == true
+                ? 'nowTab ' + option.componentName
+                : option.componentName
+            "
           >
             {{ option.title }}
           </button>
@@ -18,22 +22,19 @@
     </div>
     <div class="search-result">
       <keep-alive>
-        <component :is="nowTab">
-
-        </component>
+        <component :is="nowTab" :searchValue="Tosearch"> </component>
       </keep-alive>
     </div>
   </div>
 </template>
 
 <script>
-import api from "@/api";
+import songs from "./components/songs";
 export default {
   data() {
     return {
       Tosearch: this.$route.params.value,
       isShow: true,
-      songList: [],
       options: {
         songs: {
           componentName: "songs",
@@ -61,7 +62,7 @@ export default {
     };
   },
   created() {
-    this.search(this.Tosearch);
+    // this.search(this.Tosearch);
   },
   methods: {
     changeComponents(componentName) {
@@ -69,17 +70,15 @@ export default {
       document.querySelector(".nowTab").classList.remove('nowTab')
       document.querySelector("."+componentName).classList.add("nowTab")
     },
-    search(value) {
-      api.search(value).then((res) => {
-        let a = 0;
-        // a 用作循环和歌曲下标
-        while (a < res.data.result.songs.length) {
-          this.songList.push(res.data.result.songs[a]);
-          a++;
-        }
-      });
-    },
   },
+  components:{
+    songs,
+  },
+  watch:{
+      '$route'(val){
+          this.Tosearch = this.$route.params.value
+      }
+  }
 };
 </script>
 
