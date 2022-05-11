@@ -21,6 +21,7 @@
           <span class="song-duration">时长</span>
           <!-- album 专辑名 -->
         </li>
+        
         <li
           v-for="(Song, index) of SongList[0]"
           :key="index"
